@@ -1,17 +1,18 @@
 <script setup>
 
-
-
-//  
-
 const props = defineProps({
   isHide: Boolean,
   default: true,
-  muller:String,
  
-
-  
 });
+
+const emits = defineEmits(['onSearch']);
+
+const gotoSearched = () => {
+  emits('onSearch');
+  console.log('onsearched is clicked');
+  
+};
 
 
 </script>
@@ -20,7 +21,7 @@ const props = defineProps({
   <div class="flex items-center flex-col mt-24">
    
      <div v-if="isHide">
-      <!-- todo -->
+     
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="100.53"
@@ -51,7 +52,7 @@ const props = defineProps({
       </svg>
     </div> 
    
-    <div class="relative flex items-center">
+    <div class="relative flex items-center w-2/5">
       <svg
         class="h-5 w-5 text-gray-400 absolute left-3"
         fill="#888888"
@@ -80,9 +81,9 @@ const props = defineProps({
     </div>
 
     <div class="m-4">
-      <button @click="goToGoogleSearched"
+      <button  @click="gotoSearched()"
         class="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg shadow-sm hover:bg-gray-100 focus:outline-none focus:border-blue-500 m-4"
-      >
+         >
         Google search
       </button>
       <button

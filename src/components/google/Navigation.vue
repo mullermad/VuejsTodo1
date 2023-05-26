@@ -1,17 +1,16 @@
 <script setup>
 const emit = defineEmits(["showimges","showsomali"]);
+
 const emmiter = () => {
   emit("showimges");
 };
 
-const somaliEmmiter=()=>{
-  emit("showsomali")
-}
+
 </script>
 
 <template>
   <div class="flex justify-end">
-    <a @click="somaliEmmiter()" class="m-3" href="#">Gmail</a>
+    <a class="m-3" href="#">Gmail</a>
     <a class="m-3" href="#">Images</a>
     <svg
       class="h-8 w-7 m-3"
